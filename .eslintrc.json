@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": "next/core-web-vitals",
+	"plugins": ["react-func"],
+	"rules": {
+		"no-var": "warn",
+		"semi": ["warn", "never"],
+		"indent": ["warn", "tab"],
+		"no-multi-spaces": "warn",
+		"space-in-parens": ["warn", "never"],
+		"no-multiple-empty-lines": ["warn", { "max": 1 }],
+		"prefer-const": "warn",
+		"no-use-before-define": "warn",
+
+		"complexity": ["warn", 4],
+		"react-func/max-lines-per-function": [
+			"warn",
+			{
+				"max": 20,
+				"skipBlankLines": true,
+				"skipComments": true,
+				"IIFEs": true
+			}
+		],
+		"max-statements": ["warn", 10]
+	}
 }
