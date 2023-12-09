@@ -1,11 +1,5 @@
-import React, { FC } from 'react'
+import { NextPage } from 'next'
 
-interface pageProps {
-	children?: React.ReactNode
-}
-
-const page: FC<pageProps> = ({ children }) => {
-	return <div className="flex justify-center">Start page </div>
-}
+const page: NextPage = () => <div className="flex justify-center">Start page </div>
 
 export default page

@@ -1,12 +1,5 @@
-import NavBar from '@/components/NavBar'
-import React, { FC } from 'react'
+import { NextPage } from 'next'
 
-interface pageProps {
-	children?: React.ReactNode
-}
-
-const Page: FC<pageProps> = ({ children }) => {
-	return <div className="flex justify-center">Account page</div>
-}
+const Page: NextPage = () => <div className="flex justify-center">Account page</div>
 
 export default Page

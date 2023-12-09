@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 import { useSession } from 'next-auth/react'
 
 const Page: NextPage = () => {
-	const { data: session, status } = useSession()
+	const { data: session } = useSession()
 
 	console.log(process.env.TZ)
 

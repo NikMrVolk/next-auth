@@ -1,6 +1,11 @@
 {
-	"extends": "next/core-web-vitals",
-	"plugins": ["react-func"],
+	"extends": ["eslint:recommended", "plugin:react/recommended", "next/core-web-vitals"],
+	"plugins": ["react", "react-func", "import"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
 	"rules": {
 		"no-var": "warn",
 		"semi": ["warn", "never"],
@@ -10,8 +15,17 @@
 		"no-multiple-empty-lines": ["warn", { "max": 1 }],
 		"prefer-const": "warn",
 		"no-use-before-define": "warn",
-
+		"no-shadow": ["warn", { "builtinGlobals": true, "hoist": "all", "allow": ["status"] }],
+		"arrow-body-style": ["warn", "as-needed"],
 		"complexity": ["warn", 4],
+		"max-statements": ["warn", 10],
+		"react/self-closing-comp": [
+			"warn",
+			{
+				"component": true,
+				"html": true
+			}
+		],
 		"react-func/max-lines-per-function": [
 			"warn",
 			{
@@ -21,6 +35,25 @@
 				"IIFEs": true
 			}
 		],
-		"max-statements": ["warn", 10]
+		"import/order": [
+			"warn",
+			{
+				"newlines-between": "always",
+				"pathGroupsExcludedImportTypes": ["react"],
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				},
+				"groups": ["builtin", "external", "parent", "sibling", "index"],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "external",
+						"position": "before"
+					}
+				]
+			}
+		],
+		"import/prefer-default-export": "off"
 	}
 }

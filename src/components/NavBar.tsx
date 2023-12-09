@@ -1,15 +1,17 @@
 'use client'
 import React, { FC } from 'react'
-import { signIn, signOut, useSession } from 'next-auth/react'
+
 import { Github } from 'lucide-react'
+import { signIn, signOut, useSession } from 'next-auth/react'
+
 import LoginButton from './LoginButton'
 
 interface NavBarProps {
 	children?: React.ReactNode
 }
 
-const NavBar: FC<NavBarProps> = ({ children }) => {
-	const { data: session, status } = useSession()
+const NavBar: FC<NavBarProps> = () => {
+	const { data: session } = useSession()
 
 	if (session) {
 		return (
