@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
 
-const Page: NextPage = () => <div className="flex justify-center">Account page</div>
+const Account: NextPage = () => <div className="flex justify-center">Account page</div>
 
-export default Page
+export default Account

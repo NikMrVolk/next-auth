@@ -1,14 +1,17 @@
-'use client'
-
 import { NextPage } from 'next'
-import { useSession } from 'next-auth/react'
+import { redirect } from 'next/navigation'
+import { getServerSession } from 'next-auth'
 
-const Page: NextPage = () => {
-    const { data: session } = useSession()
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
-    console.log(process.env.TZ)
+const Dashboard: NextPage = async () => {
+    const session = await getServerSession(authOptions)
 
-    return <div>Hello, {session?.user?.name}</div>
+    if (!session || !session?.user) {
+        redirect('/account')
+    }
+    console.log()
+    return <div>{session?.user?.name}</div>
 }
 
-export default Page
+export default Dashboard
