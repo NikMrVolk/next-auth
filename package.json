@@ -9,7 +9,7 @@
     "format": "prettier --check --ignore-path .gitignore --ignore-path .prettierignore .",
     "format:fix": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore .",
     "lint:css": "stylelint --allow-empty-input '**/*.css'",
-    "lint": "npm run format && npm run lint:css && npm run next lint",
+    "lint": "npm run format && npm run lint:css && next lint",
     "prepare": "husky install"
   },
   "dependencies": {
