@@ -2,6 +2,8 @@ import { NextPage } from 'next'
 
 import { cn } from '@/lib/utils'
 
-const page: NextPage = () => <div className={cn('flex justify-center')}>Start page </div>
+const MainPage: NextPage = () => (
+    <div className={cn('flex justify-center text-4xl')}>Main page </div>
+)
 
-export default page
+export default MainPage

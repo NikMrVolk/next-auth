@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { cn } from '@/lib/utils'
 
 const Dashboard: NextPage = async () => {
     const session = await getServerSession(authOptions)
@@ -10,8 +11,8 @@ const Dashboard: NextPage = async () => {
     if (!session || !session?.user) {
         redirect('/account')
     }
-    console.log()
-    return <div>{session?.user?.name}</div>
+
+    return <div className={cn('text-center')}>{session?.user?.name}</div>
 }
 
 export default Dashboard

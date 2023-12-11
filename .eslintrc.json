@@ -20,6 +20,7 @@
         }
     },
     "plugins": ["@typescript-eslint", "react", "react-func", "import"],
+    "ignorePatterns": ["jest.config.js", "createMockRouter.ts"],
     "rules": {
         "linebreak-style": ["warn", "unix"],
         "no-var": "warn",
@@ -35,7 +36,7 @@
             {
                 "builtinGlobals": true,
                 "hoist": "all",
-                "allow": ["status"]
+                "allow": ["status", "screen"]
             }
         ],
         "arrow-body-style": ["warn", "as-needed"],
